@@ -110,6 +110,7 @@ a:hover{color:#AAFF00}
 
 <header data-hero="1" style="position:relative; height:100vh; min-height:620px; overflow:hidden; background:#8E9398; color:#FFFFFF;">
   <img data-photo="1" src="assets/diego-retrato-final.png" alt="Diego Vieira" style="position:absolute; left:0; top:0; width:100%; height:112%; object-fit:cover; object-position:58% 30%; will-change:transform;">
+  <div data-hfade="1" style="display:none; position:absolute; left:0; right:0; bottom:0; height:45%; z-index:1; pointer-events:none; background:linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.55) 55%, #0A0A0A 100%);"></div>
   <nav style="position:absolute; left:0; right:0; top:0; z-index:5; padding:28px clamp(20px,3vw,48px); display:flex; justify-content:space-between; align-items:center; gap:24px; font-size:15px; font-weight:600;">
     <a href="#topo" data-mag="1" style="display:flex; align-items:center; gap:10px; color:#FFFFFF;">© DIVIMO by Diego Vieira</a>
     <div style="display:flex; align-items:center; gap:clamp(16px,2.6vw,36px);">
@@ -286,7 +287,7 @@ class Component extends DCLogic {
   state = { open: null };
   data = [
     { client: 'Nanuka', name: 'Nanuka Shoes Store', cat: 'Branding · E-commerce', year: '2023', tone: '#0F0F0F', ink: '#E3F152',
-      thumb: 'assets/thumbs/nanuka.png', cover: 'assets/nanuka/06.mp4', gallery: true,
+      thumb: 'assets/thumbs/nanuka.png', cover: 'assets/nanuka/11.mp4', gallery: true,
       title: 'Um passo à frente.',
       story: [
         'Quando comecei este projeto, o nome “Nanuka” já estava escolhido, mas ainda não tinha um significado claro. Eu sabia, porém, que havia algo especial nele — algo capaz de dar vida à marca.',
@@ -294,7 +295,7 @@ class Component extends DCLogic {
         'Para traduzir essa visão, transformei o “N” de Nanuka no número “1”. A mudança simboliza a busca incansável pelo primeiro lugar e a determinação de estar sempre na liderança. Mais que um número, o “1” representa excelência e vontade de vencer.',
         'Assim nasceu a Nanuka, um e-commerce de calçados esportivos que carrega esses valores. Cada par foi pensado para ajudar o cliente a dar o primeiro passo rumo à vitória — e acompanhá-lo em cada etapa da sua jornada no esporte.'
       ],
-      images: ['assets/nanuka/02_Logo.png', 'assets/nanuka/03_Cores.png', 'assets/nanuka/04_Logo.png', 'assets/nanuka/05.mp4', 'assets/nanuka/07.mp4', 'assets/nanuka/09.mp4', 'assets/nanuka/10.mp4', 'assets/nanuka/11.mp4', 'assets/nanuka/Camisas.jpg'] },
+      images: ['assets/nanuka/02_Logo.png', 'assets/nanuka/05.mp4', 'assets/nanuka/04_Logo.png', 'assets/nanuka/06.mp4', 'assets/nanuka/07.mp4', 'assets/nanuka/09.mp4', 'assets/nanuka/Camisas.jpg', 'assets/nanuka/10.mp4'] },
     { client: 'Savassi', name: 'SAVASSI design by Pininfarina', cat: 'Identidade visual · Branding imobiliário', tone: '#0A0A0A', ink: '#C9A9A6',
       thumb: 'assets/thumbs/savassi.png', cover: 'assets/savassi/00.jpg', gallery: true,
       title: 'A marca foi extraída da arquitetura.',
@@ -339,12 +340,12 @@ class Component extends DCLogic {
     const m = innerWidth < 760, d = document;
     const set = (el, css) => { if (!el || !css) { if (el && el.__on && !m) { el.style.cssText = el.__css; el.__on = 0; } return; } if (m) { if (el.__on) return; el.__css = el.style.cssText; el.style.cssText = el.__css + ';' + css; el.__on = 1; } else if (el.__on) { el.style.cssText = el.__css; el.__on = 0; } };
     const nav = d.querySelector('[data-hero] nav');
-    if (nav) { set(nav, 'padding:18px 20px; gap:12px; font-size:14px;'); const brand = nav.firstElementChild; if (brand) { if (!brand.__t) brand.__t = brand.textContent; brand.textContent = m ? '© DIVIMO' : brand.__t; }
+    if (nav) { set(nav, 'padding:18px 20px; gap:12px; font-size:14px;'); const brand = nav.firstElementChild; if (brand) { if (!brand.__t) brand.__t = brand.textContent; brand.textContent = m ? '©\u00A0DIVIMO' : brand.__t; set(brand, 'white-space:nowrap; flex:none;'); }
       const links = nav.querySelectorAll(':scope > div > a'); links.forEach(a => set(a, a.getAttribute('href') === '#quem-sou' ? 'display:none;' : '')); set(nav.querySelector(':scope > div'), 'gap:14px;'); }
     const hins = d.querySelectorAll('[data-hero] > [data-hin]');
     set(hins[0], 'top:auto; bottom:calc(clamp(8px,3vh,40px) + 130px); padding:12px 12px 12px 20px; gap:14px;');
     set(hins[1], 'top:96px; right:20px; gap:12px; text-align:right; align-items:flex-end;');
-    set(d.querySelector('[data-hero] [data-photo]'), 'object-position:62% 30%;');
+    set(d.querySelector('[data-hero] [data-photo]'), 'object-position:50% 22%;'); set(d.querySelector('[data-hfade]'), 'display:block;');
     set(d.getElementById('sobre'), 'grid-template-columns:minmax(0,1fr); padding:80px 20px; gap:40px;');
     set(d.getElementById('quem-sou'), 'grid-template-columns:minmax(0,1fr); padding:0 20px 90px; gap:40px;');
     const qs = d.querySelector('#quem-sou [data-up][style*="repeat(3"]'); set(qs, 'grid-template-columns:minmax(0,1fr); gap:20px;');
@@ -353,7 +354,7 @@ class Component extends DCLogic {
     d.querySelectorAll('[data-strip] > div').forEach(c => set(c, 'width:68vw;'));
     const ct = d.getElementById('contato'); if (ct) { set(ct, 'padding:90px 20px 28px; border-radius:32px 32px 0 0;'); ct.querySelectorAll(':scope h2').forEach(x => set(x, 'font-size:clamp(40px,12vw,64px);')); set(ct.firstElementChild, 'gap:14px;');
       ct.querySelectorAll(':scope > div[data-up] > a').forEach(a => set(a, 'padding:18px 24px; font-size:15px; width:100%; box-sizing:border-box; text-align:center;'));
-      const ln = ct.querySelector(':scope > div[style*="height:1px"] > a'); set(ln, 'right:0; width:120px; height:120px; font-size:14px;'); }
+      const ln = ct.querySelector('a[data-fill]'); set(ln && ln.parentElement, 'display:none;'); }
     const touch = matchMedia('(hover: none)').matches || m;
     ['[data-preview]','[data-cur]'].forEach(s => { const el = d.querySelector(s); if (el) if (el.__d == null) el.__d = el.style.display; el.style.display = touch ? 'none' : el.__d; });
     set(d.querySelector('[data-modal]'), 'padding:0; gap:0;'); set(d.querySelector('[data-mgrid]'), 'grid-template-columns:minmax(0,1fr); padding:32px 22px 110px; gap:20px;'); set(d.querySelector('[data-mclose]'), 'position:fixed; top:14px; right:14px; z-index:4; padding:12px 18px; background:rgba(10,10,10,0.75);');
