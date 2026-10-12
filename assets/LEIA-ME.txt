@@ -1,8 +1,0 @@
-DIVIMO — pacote de publicação
-
-index.html  -> página inicial (portfólio)
-sites.html  -> página /sites
-vercel.json -> URLs limpas (/sites) e cache dos arquivos
-
-Publicar: suba esta pasta para um repositório no GitHub e importe na Vercel
-(Framework: Other, sem build command, output = raiz).
