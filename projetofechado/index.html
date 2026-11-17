@@ -58,6 +58,7 @@ h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.025em;line-height:1.1}
 .hero .lead{margin-bottom:40px}
 .vsl{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--ink-2);border:1px solid var(--line-d);margin:8px 0 40px}
 .vsl{cursor:pointer}.vsl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--out,ease)}.vsl:hover img{transform:scale(1.03)}.vsl .play{background:linear-gradient(0deg,rgba(10,10,10,.55),rgba(10,10,10,.15))}.vsl .play i{transition:transform .45s cubic-bezier(.34,1.56,.64,1);box-shadow:0 0 0 0 rgba(170,255,0,.5);animation:pulse 2.2s infinite}.vsl:hover .play i{transform:scale(1.1)}.vsl .play{inset:auto 0 0 0!important;height:auto;display:flex!important;flex-direction:row;align-items:center;justify-content:flex-start;align-content:normal;text-align:left;gap:16px;padding:60px 28px 26px;background:linear-gradient(0deg,rgba(10,10,10,.75),rgba(10,10,10,0))!important}.vsl .play i{width:72px;height:72px;flex:none}.vsl .play b{align-self:center;color:#fff}
+.vsl .unmute{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--lime);color:var(--ink);border:0;border-radius:999px;padding:18px 30px;font:800 17px Manrope,sans-serif;cursor:pointer;box-shadow:0 10px 40px -10px rgba(0,0,0,.6);animation:pulse 2.2s infinite;z-index:2}.vsl .unmute span{margin-right:6px}
 @keyframes pulse{70%{box-shadow:0 0 0 22px rgba(170,255,0,0)}100%{box-shadow:0 0 0 0 rgba(170,255,0,0)}}
 .vsl .play{position:absolute;inset:0;display:grid;place-items:center;text-align:center;gap:14px;align-content:center}
 .vsl .play i{width:88px;height:88px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
@@ -635,8 +636,17 @@ addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(u
 })();
 </script>
 <script>
-(function(){var v=document.getElementById('vsl');if(!v)return;function go(){if(v.querySelector('video'))return;v.innerHTML='<video src="/projetofechado/vid/vsl.mp4" poster="/projetofechado/img/vsl-poster.jpg" controls autoplay playsinline preload="auto"></video>';v.style.cursor='default';v.removeAttribute('role');}
-v.addEventListener('click',go);v.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});})();
+(function(){var v=document.getElementById('vsl');if(!v)return;var SRC="/projetofechado/vid/vsl.mp4",POS="/projetofechado/img/vsl-poster.jpg";
+function make(muted){if(v.querySelector('video'))return v.querySelector('video');
+v.innerHTML='<video src="'+SRC+'" poster="'+POS+'" controls playsinline preload="auto"'+(muted?' muted':'')+'></video>';v.style.cursor='default';v.removeAttribute('role');var vid=v.querySelector('video');
+if(muted){var b=document.createElement('button');b.className='unmute';b.innerHTML='<span>&#128266;</span> Clique para ouvir';v.appendChild(b);
+var go=function(e){e&&e.stopPropagation();vid.muted=false;vid.currentTime=0;vid.play();b.remove();};b.addEventListener('click',go);
+vid.addEventListener('volumechange',function(){if(!vid.muted&&b.parentNode)b.remove();});}
+var p=vid.play();if(p&&p.catch)p.catch(function(){});return vid;}
+v.addEventListener('click',function(){if(!v.querySelector('video'))make(false);});
+v.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&!v.querySelector('video')){e.preventDefault();make(false)}});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting&&x.intersectionRatio>=.5){io.disconnect();if(!v.querySelector('video'))make(true);}})},{threshold:[.5]});io.observe(v);}
+})();
 </script>
 </body>
 </html>
