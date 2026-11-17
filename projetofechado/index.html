@@ -318,7 +318,7 @@ section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round 
   .list div{flex-direction:column;gap:4px;padding:16px 0;font-size:16px}
   .list div span{color:var(--muted)}
   .list b.l{align-self:flex-start}
-  .doc .thumb{height:250px;padding:20px 20px 0}
+  .doc .thumb{height:auto;padding:28px 20px 0}
   .doc .thumb img{width:44%!important}
   .doc.wide .thumb img{width:70%!important}
   .vsl .unmute{white-space:nowrap}
@@ -332,6 +332,8 @@ section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round 
   .hero{padding-top:80px}
   .guar{padding-bottom:0}
 }
+
+@media (max-width:700px){.seal{width:fit-content;justify-self:start;padding:10px 24px 10px 10px}}
 </style>
 </head>
 <body>
@@ -462,7 +464,7 @@ section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round 
 <section class="light">
   <div class="wrap">
     <div class="eyebrow"><span class="pill">O que você recebe</span></div>
-    <h2 class="reveal">Tudo pronto.<br><span class="g">É só trocar os [colchetes].</span></h2>
+    <h2 class="reveal">Tudo pronto.<br><span class="g">É só trocar <span style="white-space:nowrap">os [colchetes].</span></span></h2>
     <div class="docs">
       <article class="doc wide">
         <div class="thumb"><img src="/projetofechado/img/proposta-01.jpg" alt="Capa da proposta comercial" loading="lazy" style="border-radius:8px 8px 0 0;width:72%"></div>
