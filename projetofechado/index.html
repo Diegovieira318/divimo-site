@@ -269,6 +269,46 @@ section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== ajustes mobile ===== */
+@media (max-width:700px){
+  section{padding:64px 0}
+  .wrap{padding-left:20px;padding-right:20px}
+  .top{background:rgba(10,10,10,.9)}
+  .top .wrap{height:56px}
+  .top.scrolled{top:10px;width:calc(100% - 20px)}
+  .top.scrolled .wrap{height:52px;padding:0 14px}
+  .logo svg,.top.scrolled .logo svg{height:30px}
+  .btn{font-size:16px;padding:18px 22px;gap:10px}
+  .hero .btn,.combo .btn,.final .btn,.pricebox .btn{width:100%}
+  .turn{grid-template-columns:1fr;gap:18px;margin-top:48px}
+  .turn p{font-size:18px}
+  .combo{padding:22px;gap:16px}
+  .combo p{flex-basis:100%;font-size:16px}
+  .vsl .unmute{font-size:14px;padding:11px 18px}
+  .vsl .play{padding:40px 18px 18px}
+  .vsl .play i{width:56px;height:56px}
+  .vsl .play b{font-size:12px}
+  .photo,.about .photo{aspect-ratio:4/5!important;max-height:72vh}
+  .photo img{object-position:55% 12%}
+  .about{gap:32px}
+  .pricebox{padding:26px 22px}
+  .bump{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}
+  .bump img{width:140px}
+  .seal{padding:12px 26px 12px 12px;gap:14px;align-self:flex-start}
+  .seal b{width:66px;height:66px;font-size:40px}
+  .seal span{font-size:18px}
+  .guar{gap:28px}
+  .tools{gap:6px}
+  .tools span{font-size:13.5px;padding:7px 12px}
+  .chapters div{padding:14px}
+  .math > *{padding:24px!important}
+  .who > div{padding:26px 22px}
+  .doc .thumb{height:220px}
+  .feature{margin-top:36px}
+  section.light,section.white,section.bonus{clip-path:none!important}
+  .mcta .btn{font-size:17px}
+}
 </style>
 </head>
 <body>
