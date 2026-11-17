@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit Projeto Fechado — DIVIMO</title>
+<meta name="description" content="A estrutura de documentos que eu uso para entregar marcas de R$ 30 mil: proposta, contrato, briefing e mais 4 modelos editáveis no Illustrator.">
+<meta property="og:title" content="Kit Projeto Fechado — DIVIMO">
+<meta property="og:description" content="Use a estrutura que eu uso para entregar marcas de R$ 30 mil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0a; --ink-2:#1a1a1a; --line-d:#2a2a2a;
+  --paper:#e6e6e3; --paper-2:#f6f6f4; --line:#c9c9c4;
+  --grey:#8a8a85; --muted:#6b6b67; --muted-d:#a6a6a6;
+  --lime:#aaff00; --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--ink);color:#fff;-webkit-font-smoothing:antialiased;line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:112px 0}
+.light{background:var(--paper);color:var(--ink)}
+.white{background:var(--paper-2);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid currentColor;border-radius:999px;padding:8px 18px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.pill.lime{border-color:var(--lime);color:var(--lime)}
+.pill.fill{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+h1,h2,h3{font-weight:700;letter-spacing:-.04em;line-height:1}
+h1{font-size:clamp(44px,7.4vw,104px)}
+h2{font-size:clamp(36px,5.2vw,72px)}
+h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.025em;line-height:1.1}
+.g{color:var(--grey)} .l{color:var(--lime)}
+.lead{font-size:clamp(17px,1.6vw,21px);color:var(--muted-d);max-width:640px}
+.light .lead,.white .lead{color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--lime);color:var(--ink);text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.01em;padding:22px 34px;border-radius:999px;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 0 0 0 rgba(170,255,0,.0)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px -10px rgba(170,255,0,.55)}
+.btn svg{width:20px;height:20px}
+.btn.dark{background:var(--ink);color:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:14px;color:var(--muted-d)}
+.light .trust,.white .trust{color:var(--muted)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:16px;height:16px;flex:none}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-weight:800;letter-spacing:.18em;font-size:14px}
+.top .btn{padding:12px 22px;font-size:14px}
+
+/* hero */
+.hero{padding:72px 0 96px;position:relative;overflow:hidden}
+.hero h1{margin:4px 0 28px;max-width:1000px}
+.hero .lead{margin-bottom:40px}
+.vsl{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--ink-2);border:1px solid var(--line-d);margin:8px 0 40px}
+.vsl{cursor:pointer}.vsl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--out,ease)}.vsl:hover img{transform:scale(1.03)}.vsl .play{background:linear-gradient(0deg,rgba(10,10,10,.55),rgba(10,10,10,.15))}.vsl .play i{transition:transform .45s cubic-bezier(.34,1.56,.64,1);box-shadow:0 0 0 0 rgba(170,255,0,.5);animation:pulse 2.2s infinite}.vsl:hover .play i{transform:scale(1.1)}.vsl .play{inset:auto 0 0 0!important;height:auto;display:flex!important;flex-direction:row;align-items:center;justify-content:flex-start;align-content:normal;text-align:left;gap:16px;padding:60px 28px 26px;background:linear-gradient(0deg,rgba(10,10,10,.75),rgba(10,10,10,0))!important}.vsl .play i{width:72px;height:72px;flex:none}.vsl .play b{align-self:center;color:#fff}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(170,255,0,0)}100%{box-shadow:0 0 0 0 rgba(170,255,0,0)}}
+.vsl .play{position:absolute;inset:0;display:grid;place-items:center;text-align:center;gap:14px;align-content:center}
+.vsl .play i{width:88px;height:88px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.vsl .play i svg{width:30px;height:30px;margin-left:5px}
+.vsl .play b{font-size:15px;letter-spacing:.12em;text-transform:uppercase}
+.vsl iframe,.vsl video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
+.price-tag{font-size:15px;color:var(--muted-d)}
+.price-tag b{color:#fff;font-size:22px}
+
+/* marquee of docs */
+.strip{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);overflow:hidden;padding:22px 0;background:var(--ink)}
+.strip .row{display:flex;gap:44px;width:max-content;animation:slide 38s linear infinite;font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--grey)}
+.strip .row span{display:inline-flex;align-items:center;gap:44px}
+.strip .row span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.strip .row{animation:none}}
+
+/* pain */
+.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:56px}
+.pain{background:var(--paper-2);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:14px}
+.pain .x{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center}
+.pain .x svg{width:14px;height:14px}
+.pain p{color:var(--muted);font-size:16px}
+.turn{margin-top:72px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.turn p{font-size:20px;color:var(--muted)}
+.turn p b{color:var(--ink)}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:64px}
+.step{border-top:2px solid var(--line-d);padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.step.on{border-color:var(--lime)}
+.step small{font-size:13px;color:var(--grey);font-weight:600}
+.step b{font-size:18px;letter-spacing:-.02em;line-height:1.15}
+.step span{font-size:14px;color:var(--muted-d)}
+@media (max-width:980px){.journey{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}}
+
+/* docs */
+.docs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;margin-top:64px}
+.doc{grid-column:span 4;background:var(--paper-2);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.doc.wide{grid-column:span 8}
+.doc .thumb{background:#d9d9d5;padding:26px 26px 0;display:flex;align-items:flex-end;justify-content:center;gap:12px;height:300px;overflow:hidden}
+.doc .thumb img{border-radius:8px 8px 0 0;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);width:62%;height:auto}
+.doc.wide .thumb img{width:48%}
+.doc .body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:10px}
+.doc .meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.doc .num{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:0}
+.doc p{color:var(--muted);font-size:15.5px}
+@media (max-width:980px){.doc,.doc.wide{grid-column:span 12}.doc .thumb{height:260px}}
+
+/* proposta gallery */
+.gallery{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gallery img{border-radius:14px;border:1px solid var(--line-d)}
+.gallery img:first-child{grid-column:span 2;grid-row:span 2}
+@media (max-width:780px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery img:first-child{grid-column:span 2;grid-row:auto}}
+
+/* formats */
+.formats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.fmt{border:1px solid var(--line-d);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:12px;background:var(--ink-2)}
+.fmt .ic{width:46px;height:46px;border-radius:14px;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:15px}
+.fmt p{color:var(--muted-d);font-size:15.5px}
+@media (max-width:860px){.formats{grid-template-columns:1fr}}
+
+/* math */
+.math{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+.big{background:var(--ink);color:#fff;border-radius:var(--radius);padding:44px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-height:340px}
+.big .n{font-size:clamp(72px,10vw,140px);font-weight:700;letter-spacing:-.06em;line-height:.85;color:var(--lime)}
+.big p{color:var(--muted-d);font-size:18px;max-width:420px}
+.list{background:var(--paper-2);border-radius:var(--radius);padding:12px 36px}
+.list div{display:flex;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);font-size:17px}
+.list div:last-child{border:0}
+.list b{white-space:nowrap}
+@media (max-width:860px){.math{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.photo{aspect-ratio:4/5;border-radius:var(--radius);background:var(--ink-2);border:1px dashed var(--line-d);display:grid;place-items:center;text-align:center;color:var(--grey);font-size:14px;padding:30px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:36px 0}
+.stat{border-top:2px solid var(--lime);padding-top:14px}
+.stat b{display:block;font-size:clamp(34px,4vw,52px);letter-spacing:-.05em;line-height:1}
+.stat span{font-size:14px;color:var(--muted-d)}
+.clients{display:flex;flex-wrap:wrap;gap:8px}
+.clients span{background:var(--ink-2);border:1px solid var(--line-d);border-radius:999px;padding:9px 16px;font-size:14px;color:#ddd}
+@media (max-width:860px){.about{grid-template-columns:1fr}.photo{aspect-ratio:16/10}}
+
+/* offer */
+.offer{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:56px;align-items:stretch}
+.card{background:var(--paper-2);border-radius:28px;padding:40px;color:var(--ink)}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin:26px 0 0}
+.card li{display:flex;gap:14px;font-size:17px;align-items:flex-start}
+.card li svg{width:22px;height:22px;flex:none;margin-top:2px}
+.pricebox{background:var(--ink);border:1px solid var(--line-d);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.pricebox .from{color:var(--muted-d);font-size:16px}
+.pricebox .val{font-size:clamp(64px,8vw,104px);font-weight:700;letter-spacing:-.06em;line-height:.9}
+.pricebox .val small{font-size:.38em;letter-spacing:-.02em;vertical-align:top;margin-right:6px}
+.pricebox .inst{font-size:16px;color:var(--muted-d)}
+.pricebox .btn{width:100%}
+.bump{display:flex;gap:16px;align-items:center;border:1px dashed var(--lime);border-radius:18px;padding:18px 20px;font-size:15px;color:#ddd}
+.bump img{width:96px;border-radius:8px}
+@media (max-width:860px){.offer{grid-template-columns:1fr}}
+
+/* guarantee */
+.guar{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.seal{display:flex;align-items:center;gap:18px;background:var(--ink);color:#fff;border-radius:999px;padding:18px 40px 18px 22px}
+.seal b{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:var(--lime);color:var(--ink);font-size:58px;letter-spacing:-.06em;line-height:1}
+.seal span{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+@media (max-width:700px){.guar{grid-template-columns:1fr}}
+
+/* for who */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+.who > div{border-radius:var(--radius);padding:36px}
+.who .yes{background:var(--lime);color:var(--ink)}
+.who .no{background:var(--ink-2);border:1px solid var(--line-d)}
+.who ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:20px;font-size:16.5px}
+.who li{display:flex;gap:12px}
+.who li::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;margin-top:9px;flex:none}
+@media (max-width:860px){.who{grid-template-columns:1fr}}
+
+/* faq */
+.faq{margin-top:48px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:26px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none;transition:transform .2s}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq summary i svg{width:12px;height:12px}
+.faq p{margin-top:14px;color:var(--muted);font-size:16.5px;max-width:800px}
+
+/* final */
+.final{text-align:left;padding:140px 0}
+.final h2{font-size:clamp(48px,9vw,140px);letter-spacing:-.055em;line-height:.88;margin-bottom:40px}
+footer{border-top:1px solid var(--line-d);padding:30px 0;font-size:13px;color:var(--grey)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+
+/* bonus apresentacao */
+.bonus{background:var(--ink);position:relative;overflow:hidden;border-top:1px solid var(--line-d)}
+.bonus .tag{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.bonus h2 .l{display:block}
+.bonus-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;margin-top:8px}
+.bonus-hero .quote{border-left:3px solid var(--lime);padding-left:22px;font-size:clamp(18px,1.7vw,22px);color:#e8e8e8;font-weight:500;line-height:1.45}
+.bonus-hero .quote small{display:block;margin-top:10px;font-size:14px;color:var(--grey);font-weight:600}
+.feature{margin-top:56px;border-radius:26px;overflow:hidden;border:1px solid var(--line-d);position:relative}
+.feature img{width:100%}
+.feature .badge{position:absolute;left:20px;bottom:20px;background:var(--lime);color:var(--ink);font-weight:800;border-radius:999px;padding:10px 18px;font-size:14px;letter-spacing:.02em}
+.chapters{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:40px}
+.chapters div{background:var(--ink-2);border:1px solid var(--line-d);border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;gap:6px}
+.chapters small{color:var(--lime);font-weight:700;font-size:13px}
+.chapters b{font-size:16px;letter-spacing:-.02em;line-height:1.15}
+@media (max-width:980px){.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.bonus-hero{grid-template-columns:1fr}}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tools span{border:1px solid var(--line-d);border-radius:999px;padding:9px 16px;font-size:14px;color:#ddd}
+.slides{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:40px}
+.slides img{border-radius:12px;border:1px solid var(--line-d);transition:transform .3s ease}
+.slides img:hover{transform:scale(1.025)}
+@media (max-width:780px){.slides{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bonus-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:40px}
+.bonus-more div{background:var(--ink-2);border:1px solid var(--line-d);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.bonus-more div:first-child{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.bonus-more small{font-size:13px;font-weight:700;letter-spacing:.1em;opacity:.7}
+.bonus-more b{font-size:19px;letter-spacing:-.02em}
+@media (max-width:780px){.bonus-more{grid-template-columns:1fr}}
+.combo{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;background:var(--ink-2);border:1px solid var(--line-d);border-radius:24px;padding:26px 30px}
+.combo p{font-size:17px;color:#ddd;flex:1 1 320px}
+.combo p b{color:var(--lime)}
+
+
+/* ===== motion (inspirado no phantom.com) ===== */
+:root{--spring:cubic-bezier(.34,1.56,.64,1);--out:cubic-bezier(.16,1,.3,1)}
+html{scroll-behavior:smooth}
+.top{transition:top .6s var(--out),width .6s var(--out),border-radius .6s var(--out),background .4s ease;margin:0 auto;width:100%}
+.top.scrolled{top:12px;width:min(780px,calc(100% - 24px));border-radius:999px;border:1px solid var(--line-d);background:rgba(18,18,18,.78)}
+.top.scrolled .wrap{height:56px;padding:0 10px 0 18px}
+.btn{transition:transform .45s var(--spring),box-shadow .3s ease}
+.btn:hover{transform:scale(1.045)}
+.btn:active{transform:scale(.97);transition-duration:.15s}
+.btn svg{transition:transform .45s var(--spring)}
+.btn:hover svg{transform:translateX(5px)}
+.wl{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.wl>i{font-style:normal;display:inline-block;transform:translateY(105%);filter:blur(6px);opacity:0;transition:transform .9s var(--out),filter .9s var(--out),opacity .6s ease;transition-delay:calc(var(--d,0)*45ms)}
+.words-in .wl>i{transform:none;filter:none;opacity:1}
+.reveal{transform:translateY(40px) scale(.98);transition:opacity .9s var(--out),transform 1.1s var(--out)}
+.stg>*{opacity:0;transform:translateY(30px) scale(.96);transition:opacity .8s var(--out),transform 1s var(--out);transition-delay:calc(var(--i,0)*70ms)}
+.stg.in>*{opacity:1;transform:none}
+section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round var(--cr,0px));will-change:clip-path}
+.chapters div,.bonus-more div{transition:transform .5s var(--spring),border-color .3s ease,opacity .8s var(--out)}
+.chapters div:hover,.bonus-more div:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.wl>i,.stg>*{transform:none!important;filter:none!important;opacity:1!important;transition:none!important}section.light,section.white,section.bonus{clip-path:none}}
+
+.logo{display:flex;align-items:center}.logo svg{height:42px;width:auto}
+.top.scrolled .logo svg{height:34px}
+/* docs: entrada suave */
+.docs.stg>.doc{transform:translateY(70px) scale(.97);filter:blur(8px);transition:opacity 1.2s var(--out),transform 1.5s var(--out),filter 1.2s var(--out);transition-delay:calc(var(--i,0)*120ms)}
+.docs.stg.in>.doc{transform:none;filter:none}
+.docs .doc .thumb img{transform:translateY(60px);transition:transform 1.6s var(--out),box-shadow .5s ease;transition-delay:calc(var(--i,0)*120ms + 250ms)}
+.docs.stg.in .doc .thumb img{transform:none}
+.docs .doc:hover .thumb img{transform:translateY(-8px);transition-delay:0s;transition-duration:.6s}
+.photo{padding:0;border:0;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.08);transition:transform 1.6s var(--out)}.photo.in img{transform:none}
+/* mobile sticky cta */
+.mcta{display:none}
+@media (max-width:700px){
+  section{padding:80px 0}
+  .top .btn{display:none}
+  .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+  .mcta .btn{width:100%;padding:18px}
+  body{padding-bottom:86px}
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="DIVIMO"><svg viewBox="160 362 760 356" fill="#fff" aria-hidden="true"><path d="Layer_1"/><path d="M244.65,581.22v-83.32h31.18c24.4,0,42.37,18.09,42.37,41.66s-17.97,41.66-42.37,41.66h-31.18ZM257.86,569.43h17.02c17.38,0,29.76-12.74,29.76-29.88s-12.38-29.88-29.76-29.88h-17.02v59.75Z"/><path d="M329.87,581.22v-83.32h13.21v83.32h-13.21Z"/><path d="M418.54,497.9h13.33l-28.92,83.32h-22.85l-28.92-83.32h14.04l26.66,79.39,26.66-79.39Z"/><path d="M439.96,581.22v-83.32h13.21v83.32h-13.21Z"/><path d="M555.42,581.22h-12.5v-80.46l-20,80.46h-23.21l-20-80.46v80.46h-12.5v-83.32h24.4l19.76,79.98,19.88-79.98h24.16v83.32Z"/><path d="M610.64,496.71c24.52,0,43.44,18.69,43.44,42.85s-18.93,42.85-43.44,42.85-43.56-18.69-43.56-42.85,18.93-42.85,43.56-42.85ZM610.64,570.27c16.9,0,29.87-13.33,29.87-30.71s-12.97-30.71-29.87-30.71-29.99,13.33-29.99,30.71,13.09,30.71,29.99,30.71Z"/><path d="M741.96,367.96h-403.92c-95.02,0-172.04,77.03-172.04,172.04h0c0,95.02,77.02,172.04,172.04,172.04h403.92c95.01,0,172.04-77.02,172.04-172.04h0c0-95.02-77.03-172.04-172.04-172.04ZM701.24,540c0,77.8-63.07,140.87-140.87,140.87h-221.91c-77.8,0-140.87-63.07-140.87-140.87h0c0-77.8,63.07-140.87,140.87-140.87h221.91c77.8,0,140.87,63.07,140.87,140.87h0ZM776.53,447.7h-9.28v22.87h-5.83v-22.87h-9.28v-5.39h24.38v5.39ZM811.05,470.57h-5.18v-27.18l-5.39,27.18h-9.71l-5.39-27.18v27.18h-4.96v-28.26h9.71l5.61,27.18,5.39-27.18h9.92v28.26Z"/></svg></a>
+    <a class="btn" href="#oferta">Quero o kit</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill lime">Para designers e estúdios de branding</span></div>
+    <h1>Use a estrutura que eu uso para entregar <span class="l">marcas de R$&nbsp;30&nbsp;mil.</span></h1>
+    <p class="lead">Proposta, contrato, briefing e mais 4 documentos prontos para editar no Illustrator. E, no checkout, a apresentação de marca de 56 páginas que eu uso para defender cada projeto.</p>
+
+    <!-- VSL: troque o bloco .play por <iframe> do YouTube/Vimeo ou <video> quando o vídeo estiver pronto -->
+    <div class="vsl" id="vsl" role="button" tabindex="0" aria-label="Assistir ao vídeo">
+      <img src="/projetofechado/img/vsl-poster.jpg" alt="">
+      <div class="play">
+        <i><svg viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg></i>
+        <b>Assista antes de comprar</b>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn" href="#oferta">Quero o Kit Projeto Fechado
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span class="price-tag">por apenas <b>R$ 79,90</b> ou 12x</span>
+    </div>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Acesso imediato</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>7 dias de garantia</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Pagamento seguro pela Hotmart</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="row">
+  <span>Tabela de preços</span><span>Proposta comercial</span><span>Contrato</span><span>Recibo</span><span>Briefing de marca</span><span>Termo de aceite</span><span>Pesquisa de satisfação</span><span style="color:#aaff00">Bônus: Apresentação de marca</span>
+  <span>Tabela de preços</span><span>Proposta comercial</span><span>Contrato</span><span>Recibo</span><span>Briefing de marca</span><span>Termo de aceite</span><span>Pesquisa de satisfação</span><span style="color:#aaff00">Bônus: Apresentação de marca</span>
+</div></div>
+
+<!-- DOR -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill">O problema</span></div>
+    <h2 class="reveal">Você cria marcas incríveis.<br><span class="g">Mas apresenta como amador?</span></h2>
+    <div class="pains">
+      <div class="pain reveal"><span class="x"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3>Orçamento no WhatsApp</h3><p>O cliente recebe um valor solto numa mensagem, compara com o sobrinho e some.</p></div>
+      <div class="pain reveal"><span class="x"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3>Contrato copiado da internet</h3><p>Ou nenhum contrato. Aí vêm as revisões infinitas e o "só mais um ajustezinho".</p></div>
+      <div class="pain reveal"><span class="x"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3>Briefing de conversa</h3><p>Sem perguntas certas, você descobre o que o cliente queria só na apresentação.</p></div>
+      <div class="pain reveal"><span class="x"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3>Entrega sem fim</h3><p>Não existe um documento que diga "acabou". O projeto nunca fecha de verdade.</p></div>
+    </div>
+    <div class="turn reveal">
+      <h2>Projeto fechado começa <span class="g">antes do primeiro rabisco.</span></h2>
+      <p>Cliente que paga bem compra <b>segurança</b>. Ele precisa ver processo, clareza e profissionalismo em cada documento que recebe. Foi isso que eu organizei neste kit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS: APRESENTACAO DE MARCA -->
+<section class="bonus" id="apresentacao">
+  <div class="wrap">
+    <div class="tag"><span class="pill fill">Bônus exclusivo do checkout</span><span class="pill lime">+ R$ 29,90</span></div>
+    <h2 class="reveal">A apresentação que defende a marca.<span class="l">56 páginas. 7 capítulos.</span></h2>
+    <div class="bonus-hero reveal">
+      <p class="lead" style="margin-top:28px">É a peça que transforma o seu trabalho em decisão do cliente. Do diagnóstico ao sistema visual, cada página mostra o porquê de cada escolha, e o cliente aprova a marca entendendo o valor do que comprou.</p>
+      <p class="quote">"É ali que eu aplico as ferramentas mais ricas para criar e defender a marca para o cliente."<small>Diego Vieira, DIVIMO</small></p>
+    </div>
+    <div class="feature reveal"><img src="/projetofechado/img/ap-03b.jpg" alt="Manifesto da apresentação de marca" loading="lazy"><span class="badge">Apresentação de marca · .ai editável</span></div>
+    <div class="chapters reveal">
+      <div><small>01</small><b>Ponto de partida</b></div>
+      <div><small>02</small><b>O território</b></div>
+      <div><small>03</small><b>As pessoas</b></div>
+      <div><small>04</small><b>A alma da marca</b></div>
+      <div><small>05</small><b>Da ideia à forma</b></div>
+      <div><small>06</small><b>O sistema</b></div>
+      <div><small>07</small><b>A marca viva</b></div>
+    </div>
+    <div class="tools reveal">
+      <span>Análise de concorrentes</span><span>Mapa de posicionamento</span><span>Semântica do mercado</span><span>Perfil de público</span><span>Jornada emocional</span><span>Missão, visão e valores</span><span>Arquétipos</span><span>Tom de voz</span><span>Atributos de percepção</span><span>Conceito criativo</span><span>Construção do logo</span><span>Grid e geometria</span><span>Paleta e tipografia</span><span>Aplicações</span>
+    </div>
+    <div class="slides reveal">
+      <img src="/projetofechado/img/ap-14.jpg" alt="Mapa de posicionamento" loading="lazy">
+      <img src="/projetofechado/img/ap-19.jpg" alt="Jornada emocional" loading="lazy">
+      <img src="/projetofechado/img/ap-23.jpg" alt="Arquétipo da marca" loading="lazy">
+      <img src="/projetofechado/img/ap-24.jpg" alt="Tom de voz" loading="lazy">
+      <img src="/projetofechado/img/ap-27.jpg" alt="O que não queremos ser" loading="lazy">
+      <img src="/projetofechado/img/ap-28.jpg" alt="Conceito criativo" loading="lazy">
+      <img src="/projetofechado/img/ap-32.jpg" alt="Três caminhos tipográficos" loading="lazy">
+      <img src="/projetofechado/img/ap-44.jpg" alt="Paleta de cores" loading="lazy">
+      <img src="/projetofechado/img/ap-54.jpg" alt="Você pediu, nós entregamos" loading="lazy">
+    </div>
+    <div class="bonus-more reveal">
+      <div><small>BÔNUS · .AI</small><b>Apresentação de marca</b><span>56 páginas</span></div>
+      <div><small>BÔNUS · .AI</small><b>Manuais da marca</b><span>Essencial e completo</span></div>
+      <div><small>BÔNUS · .AI</small><b>Kit de boas-vindas</b><span>9 páginas para receber o cliente</span></div>
+    </div>
+    <div class="combo reveal">
+      <p>Para levar, é só marcar o bônus na página de pagamento: <b>kit + apresentação + manuais + boas-vindas por R$ 109,80</b>. Ele aparece só no checkout.</p>
+      <a class="btn" href="https://pay.hotmart.com/H108542248Y">Quero o kit com o bônus
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- JORNADA -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill lime">A jornada completa</span></div>
+    <h2 class="reveal">7 documentos.<br><span class="g">Do primeiro contato à entrega final.</span></h2>
+    <div class="journey reveal">
+      <div class="step on"><small>01</small><b>Tabela de preços</b><span>Primeiro contato</span></div>
+      <div class="step on"><small>02</small><b>Proposta comercial</b><span>Apresenta e vende</span></div>
+      <div class="step on"><small>03</small><b>Contrato</b><span>Formaliza</span></div>
+      <div class="step on"><small>04</small><b>Recibo</b><span>Registra o pagamento</span></div>
+      <div class="step on"><small>05</small><b>Briefing</b><span>Abre o projeto</span></div>
+      <div class="step on"><small>06</small><b>Termo de aceite</b><span>Fecha a entrega</span></div>
+      <div class="step on"><small>07</small><b>Pesquisa</b><span>Gera depoimento</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VEM -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill">O que você recebe</span></div>
+    <h2 class="reveal">Tudo pronto.<br><span class="g">É só trocar os [colchetes].</span></h2>
+    <div class="docs">
+      <article class="doc wide">
+        <div class="thumb"><img src="/projetofechado/img/proposta-01.jpg" alt="Capa da proposta comercial" loading="lazy" style="border-radius:8px 8px 0 0;width:72%"></div>
+        <div class="body"><div class="meta">PROPOSTA COMERCIAL<span class="num">15 páginas</span></div><h3>A peça que fecha o projeto</h3><p>Diagnóstico, objetivos, etapas, entregáveis, cronograma, três pacotes, investimento, formas de pagamento e aceite. Uma proposta que vende sozinha.</p></div>
+      </article>
+      <article class="doc">
+        <div class="thumb"><img src="/projetofechado/img/tabela-1.jpg" alt="Tabela de preços" loading="lazy"></div>
+        <div class="body"><div class="meta">TABELA DE PREÇOS<span class="num">1 página</span></div><p>Seus pacotes e serviços adicionais numa página clara, para ancorar valor desde o primeiro contato.</p></div>
+      </article>
+      <article class="doc">
+        <div class="thumb"><img src="/projetofechado/img/contrato-1.jpg" alt="Contrato de prestação de serviços" loading="lazy"></div>
+        <div class="body"><div class="meta">CONTRATO<span class="num">4 páginas</span></div><p>Objeto, etapas, prazos, pagamento, revisões, direitos de uso e assinaturas. Chega de retrabalho sem limite.</p></div>
+      </article>
+      <article class="doc">
+        <div class="thumb"><img src="/projetofechado/img/recibo-1.jpg" alt="Recibo de pagamento" loading="lazy"></div>
+        <div class="body"><div class="meta">RECIBO<span class="num">2 páginas</span></div><p>Comprovante de entrada e quitação, com a mesma cara do resto do projeto.</p></div>
+      </article>
+      <article class="doc">
+        <div class="thumb"><img src="/projetofechado/img/briefing-1.jpg" alt="Briefing de marca" loading="lazy"></div>
+        <div class="body"><div class="meta">BRIEFING DE MARCA<span class="num">7 páginas</span></div><p>As perguntas que orientam pesquisa, estratégia e cada decisão visual.</p></div>
+      </article>
+      <article class="doc">
+        <div class="thumb"><img src="/projetofechado/img/termo-1.jpg" alt="Termo de aceite e entrega" loading="lazy"></div>
+        <div class="body"><div class="meta">TERMO DE ACEITE<span class="num">2 páginas</span></div><p>Formaliza a aprovação final e a entrega dos arquivos. O projeto fecha de verdade.</p></div>
+      </article>
+      <article class="doc wide">
+        <div class="thumb"><img src="/projetofechado/img/pesquisa-1.jpg" alt="Pesquisa de satisfação" loading="lazy" style="width:34%"><img src="/projetofechado/img/briefing-2.jpg" alt="" loading="lazy" style="width:34%"></div>
+        <div class="body"><div class="meta">PESQUISA DE SATISFAÇÃO<span class="num">2 páginas</span></div><h3>Termine o projeto com um depoimento na mão</h3><p>Colete feedback estruturado e transforme cada cliente satisfeito em prova social para o próximo.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSTA GALERIA -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill lime">Por dentro da proposta</span></div>
+    <h2 class="reveal">15 páginas pensadas<br><span class="g">para o cliente dizer sim.</span></h2>
+    <div class="gallery reveal">
+      <img src="/projetofechado/img/proposta-02.jpg" alt="Página de abertura da proposta" loading="lazy">
+      <img src="/projetofechado/img/proposta-06.jpg" alt="Página de processo" loading="lazy">
+      <img src="/projetofechado/img/proposta-07.jpg" alt="Página de pacotes" loading="lazy">
+      <img src="/projetofechado/img/proposta-12.jpg" alt="Página de investimento" loading="lazy">
+      <img src="/projetofechado/img/proposta-13.jpg" alt="Página de próximos passos" loading="lazy">
+      <img src="/projetofechado/img/proposta-15.jpg" alt="Página de encerramento" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- FORMATOS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="formats">
+      <div class="fmt reveal"><span class="ic">AI</span><h3>100% editável no Illustrator</h3><p>Textos vivos, vetores limpos, uma prancheta por página. Troque cores, fonte e logo em minutos.</p></div>
+      <div class="fmt reveal"><span class="ic">PDF</span><h3>PDF interativo do kit</h3><p>Visualize os 7 documentos num só arquivo, com sumário clicável que leva direto a cada um.</p></div>
+      <div class="fmt reveal"><span class="ic">∞</span><h3>Use em quantos projetos quiser</h3><p>Compre uma vez e use com todos os seus clientes. O acesso fica na sua área de membros.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTA -->
+<section class="white">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill">Faça a conta</span></div>
+    <h2 class="reveal">Um projeto fechado<br><span class="g">paga o kit muitas vezes.</span></h2>
+    <div class="math">
+      <div class="big reveal"><span class="n">86×</span><p>Um único projeto de R$ 6.900 (o pacote de entrada da tabela do kit) paga o investimento 86 vezes.</p></div>
+      <div class="list reveal">
+        <div><span>Montar proposta, contrato e briefing do zero</span><b>horas de trabalho</b></div>
+        <div><span>Diagramar 7 documentos com padrão de agência</span><b>mais horas ainda</b></div>
+        <div><span>Perder um cliente por parecer amador</span><b>o projeto inteiro</b></div>
+        <div><span>Kit Projeto Fechado</span><b class="l" style="color:#0a0a0a;background:#aaff00;padding:2px 10px;border-radius:999px">R$ 79,90</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section>
+  <div class="wrap about">
+    <!-- Troque este bloco pela sua foto: <img src="/projetofechado/img/diego.jpg" alt="Diego Vieira" style="border-radius:22px"> -->
+    <div class="photo reveal"><img src="/projetofechado/img/diego.jpg" alt="Diego Vieira, fundador da DIVIMO" loading="lazy"></div>
+    <div class="reveal">
+      <div class="eyebrow"><span class="pill lime">Quem criou</span></div>
+      <h2>Diego Vieira<br><span class="g">DIVIMO</span></h2>
+      <div class="stats">
+        <div class="stat"><b>20</b><span>anos unindo marcas às pessoas</span></div>
+        <div class="stat"><b>200+</b><span>marcas criadas</span></div>
+        <div class="stat"><b>2007</b><span>início da carreira</span></div>
+      </div>
+      <p class="lead">Diretor de arte há 20 anos, com passagem por grandes agências de Brasília. Hoje toca a DIVIMO, seu estúdio de branding, e abre aqui os documentos que usa no dia a dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill">Para quem é</span></div>
+    <h2 class="reveal">Feito para quem<br><span class="g">quer cobrar mais.</span></h2>
+    <div class="who">
+      <div class="yes reveal"><h3>É para você se</h3><ul>
+        <li>Você é designer, freelancer ou tem um estúdio de branding</li>
+        <li>Quer apresentar projetos com padrão de agência</li>
+        <li>Quer parar de montar proposta e contrato do zero a cada cliente</li>
+        <li>Usa ou tem acesso ao Adobe Illustrator</li>
+      </ul></div>
+      <div class="no reveal"><h3>Não é para você se</h3><ul>
+        <li>Procura modelos para editar no Canva ou no Figma</li>
+        <li>Quer um curso de design ou de identidade visual</li>
+        <li>Não pretende personalizar os documentos com a sua marca</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill lime">Oferta</span></div>
+    <h2 class="reveal">Kit Projeto Fechado.<br><span class="g">Acesso imediato.</span></h2>
+    <div class="offer">
+      <div class="card reveal">
+        <h3>Você recebe</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Tabela de preços (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Proposta comercial de 15 páginas (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Contrato de prestação de serviços (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Recibo de pagamento (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Briefing de marca (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Termo de aceite e entrega (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Pesquisa de satisfação (.ai)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4"><circle cx="12" cy="12" r="10" fill="#aaff00" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>PDF interativo com sumário clicável</li>
+        </ul>
+      </div>
+      <div class="pricebox reveal">
+        <div>
+          <p class="from">Tudo isso por</p>
+          <div class="val"><small>R$</small>79,90</div>
+          <p class="inst">ou em até 12x no cartão · Pix · boleto</p>
+        </div>
+        <a class="btn" href="https://pay.hotmart.com/H108542248Y">Quero meu kit agora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="bump" href="#apresentacao" style="text-decoration:none"><img src="/projetofechado/img/ap-01.jpg" alt="" loading="lazy"><span><b style="color:#aaff00">Não esqueça o bônus no checkout:</b> a Apresentação de marca de 56 páginas + Manuais + Kit de boas-vindas por + R$ 29,90.</span></a>
+        <div class="trust" style="margin-top:0">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Acesso imediato</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Compra segura Hotmart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="white">
+  <div class="wrap guar">
+    <div class="seal reveal"><b>7</b><span>dias de<br>garantia</span></div>
+    <div class="reveal">
+      <h2>Risco zero<br><span class="g">para você.</span></h2>
+      <p class="lead" style="margin-top:20px">Abra os arquivos, edite, teste com um cliente. Se em até 7 dias achar que o kit não é para você, peça o reembolso direto pela Hotmart e recebe 100% do valor de volta. Sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill">Perguntas frequentes</span></div>
+    <h2 class="reveal">Ainda com dúvida?</h2>
+    <div class="faq">
+      <details><summary>Como pego a Apresentação de marca?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Ela vem no bônus que aparece na página de pagamento. Basta marcar a caixa do bônus antes de finalizar a compra: por + R$ 29,90 você leva a Apresentação de marca, os Manuais da marca e o Kit de boas-vindas, todos em .ai editável.</p></details>
+      <details><summary>Preciso ter o Adobe Illustrator?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Sim. Os arquivos editáveis são .ai. O PDF interativo serve para visualizar o kit completo, mas a edição é feita no Illustrator.</p></details>
+      <details><summary>Qual fonte os arquivos usam?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Manrope, uma fonte gratuita do Google Fonts. O link para baixar está na primeira aula da área de membros.</p></details>
+      <details><summary>Funciona no Canva ou no Figma?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Não. Nesta versão os modelos são entregues em Illustrator (.ai) e PDF.</p></details>
+      <details><summary>Como recebo os arquivos?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Assim que o pagamento é aprovado, você recebe por e-mail o acesso à área de membros da Hotmart, com um módulo para cada documento e um ZIP com o kit completo.</p></details>
+      <details><summary>Posso usar com quantos clientes quiser?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Sim. Use em todos os seus projetos. Só não é permitido revender ou distribuir os modelos.</p></details>
+      <details><summary>O contrato tem validade jurídica?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Os textos são modelos de referência baseados na minha prática. Recomendo revisar o contrato e os termos com um advogado antes de usar com os seus clientes.</p></details>
+      <details><summary>E se eu não gostar?<i><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 4v16M4 12h16"/></svg></i></summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Hotmart e recebe o valor integral de volta.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pill lime">Última chamada</span></div>
+    <h2>Seu próximo projeto<br><span class="l">já começa fechado.</span></h2>
+    <div class="hero-cta">
+      <a class="btn" href="https://pay.hotmart.com/H108542248Y">Quero o Kit Projeto Fechado
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span class="price-tag"><b>R$ 79,90</b> · acesso imediato · 7 dias de garantia</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 DIVIMO · Kit Projeto Fechado</span><span>Pagamento processado pela Hotmart</span></div></footer>
+
+<div class="mcta"><a class="btn" href="https://pay.hotmart.com/H108542248Y">Quero o kit · R$ 79,90</a></div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var top=document.querySelector('.top');
+function onTop(){top.classList.toggle('scrolled',scrollY>40)}
+addEventListener('scroll',onTop,{passive:true});onTop();
+if(RM)return;
+/* palavras sobem uma a uma nos titulos */
+function split(el){var n=0;(function walk(node){[].slice.call(node.childNodes).forEach(function(c){
+ if(c.nodeType===3){var parts=c.textContent.split(/(\s+)/);var f=document.createDocumentFragment();
+  parts.forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(p));return;}
+   var w=document.createElement('span');w.className='wl';var i=document.createElement('i');i.textContent=p;i.style.setProperty('--d',n++);w.appendChild(i);f.appendChild(w);});
+  c.parentNode.replaceChild(f,c);}
+ else if(c.nodeType===1&&c.tagName!=='BR'&&c.tagName!=='svg')walk(c);});})(el);}
+var hs=document.querySelectorAll('h1,h2');hs.forEach(split);
+/* grupos em cascata */
+document.querySelectorAll('.slides,.chapters,.tools,.bonus-more,.docs,.gal,.formats,.stats').forEach(function(g){g.classList.add('stg');g.classList.remove('reveal');[].slice.call(g.children).forEach(function(c,i){c.style.setProperty('--i',i)})});
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add(x.target.matches('h1,h2')?'words-in':'in');io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+hs.forEach(function(h){io.observe(h)});document.querySelectorAll('.stg').forEach(function(g){io.observe(g)});
+/* secoes claras crescem de cartao arredondado para tela cheia */
+var secs=[].slice.call(document.querySelectorAll('section.light,section.white,section.bonus'));
+var tick=false;function upd(){tick=false;var vh=innerHeight,vw=innerWidth;secs.forEach(function(s){var r=s.getBoundingClientRect();
+ var p=Math.min(1,Math.max(0,(vh-r.top)/(vh*.6)));var e=1-Math.pow(1-p,3);
+ s.style.setProperty('--ci',((1-e)*Math.min(64,vw*.05)).toFixed(1)+'px');s.style.setProperty('--cr',(12+(1-e)*36).toFixed(1)+'px');});}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+<script>
+(function(){var v=document.getElementById('vsl');if(!v)return;function go(){if(v.querySelector('video'))return;v.innerHTML='<video src="/projetofechado/vid/vsl.mp4" poster="/projetofechado/img/vsl-poster.jpg" controls autoplay playsinline preload="auto"></video>';v.style.cursor='default';v.removeAttribute('role');}
+v.addEventListener('click',go);v.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});})();
+</script>
+</body>
+</html>
