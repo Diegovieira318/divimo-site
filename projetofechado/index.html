@@ -648,5 +648,12 @@ v.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&!v.q
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting&&x.intersectionRatio>=.5){io.disconnect();if(!v.querySelector('video'))make(true);}})},{threshold:[.5]});io.observe(v);}
 })();
 </script>
+<script>
+(function(){document.querySelectorAll('a[href^="#"]').forEach(function(a){var id=a.getAttribute('href');if(id.length<2)return;a.addEventListener('click',function(e){var t=document.querySelector(id);if(!t)return;e.preventDefault();
+document.querySelectorAll('img[loading="lazy"]').forEach(function(i){i.loading='eager'});
+var go=function(b){var y=t.getBoundingClientRect().top+window.pageYOffset-90;window.scrollTo({top:y,behavior:b})};
+go('smooth');[700,1300,2000].forEach(function(ms){setTimeout(function(){if(Math.abs(t.getBoundingClientRect().top-90)>30)go('smooth')},ms)});
+history.replaceState(null,'',id);});});})();
+</script>
 </body>
 </html>
