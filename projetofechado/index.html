@@ -309,6 +309,29 @@ section.light,section.white,section.bonus{clip-path:inset(0 var(--ci,0px) round 
   section.light,section.white,section.bonus{clip-path:none!important}
   .mcta .btn{font-size:17px}
 }
+
+@media (max-width:700px){
+  .wrap{width:calc(100% - 36px);padding-left:0;padding-right:0}
+  .math > *{padding:0!important}
+  .big{padding:28px!important;min-height:0;gap:18px}
+  .list{padding:6px 22px!important}
+  .list div{flex-direction:column;gap:4px;padding:16px 0;font-size:16px}
+  .list div span{color:var(--muted)}
+  .list b.l{align-self:flex-start}
+  .doc .thumb{height:250px;padding:20px 20px 0}
+  .doc .thumb img{width:44%!important}
+  .doc.wide .thumb img{width:70%!important}
+  .vsl .unmute{white-space:nowrap}
+  .doc .body{padding:22px}
+  .doc .meta{flex-direction:column;align-items:flex-start;gap:4px;font-size:12px}
+  .feature .badge{left:12px;bottom:12px;padding:7px 12px;font-size:11.5px}
+  .top,.top.scrolled{width:auto;margin:0;left:10px;background:rgba(10,10,10,.85);border:1px solid var(--line-d);border-radius:999px;display:inline-block}
+  .top{position:fixed;top:10px}
+  .top .wrap,.top.scrolled .wrap{width:auto;height:46px;padding:0 10px}
+  .logo svg,.top.scrolled .logo svg{height:28px}
+  .hero{padding-top:80px}
+  .guar{padding-bottom:0}
+}
 </style>
 </head>
 <body>
